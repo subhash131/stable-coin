@@ -12,7 +12,8 @@ const CHAINLINK_PROGRAM_ID = "HEvSKofvBgfaexv23kMabbYqxasxU3mQ4ibBMEmJWHny";
 // SOL/USD feed account
 const CHAINLINK_FEED = "99B2bTijsU6f1GCT73HmdR7HCFFjGMBcPZY6jZ96ynrR";
 const DIVISOR = 100000000;
-const keypairPath = require("../.config/solana/id.json");
+const keypairPath = require("../id.json");
+const STABLE_FUN_PROGRAM_ID = "7GVmoLXf5v1F1E5vcRQLe5vgjVqENTyMsJNZGsnpVZQh";
 
 describe("Get data from oracle feeds", () => {
   it("Query SOL/USD Price Feed!", async () => {
@@ -21,7 +22,7 @@ describe("Get data from oracle feeds", () => {
     // Initialize the program client with the program ID and IDL
     const program = new anchorProvider.Program(
       idl,
-      new PublicKey("5HHqUiy7DhsxuWLz7wB4tWNyaYKxrEssYfraEL2whmpb"),
+      new PublicKey(STABLE_FUN_PROGRAM_ID),
       anchor.AnchorProvider.env()
     );
 
@@ -57,7 +58,7 @@ describe("Register User", () => {
     // Initialize the program client with the program ID and IDL
     const program = new anchorProvider.Program(
       idl,
-      new PublicKey("5HHqUiy7DhsxuWLz7wB4tWNyaYKxrEssYfraEL2whmpb"),
+      new PublicKey(STABLE_FUN_PROGRAM_ID),
       anchor.AnchorProvider.env()
     );
 
